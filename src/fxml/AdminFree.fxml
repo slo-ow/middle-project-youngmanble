@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminFreeController">
+   <children>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="800.0" style="-fx-border-color: #ffffff;" text="자유게시판 조회" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="serchCobox" layoutX="78.0" layoutY="567.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: lightgray;" />
+      <Label layoutX="241.0" layoutY="574.0" />
+      <TextField fx:id="tfFind" layoutX="236.0" layoutY="567.0" prefHeight="30.0" prefWidth="350.0" />
+      <Button fx:id="btnFind" layoutX="599.0" layoutY="567.0" mnemonicParsing="false" onAction="#Find" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="검색" textFill="WHITE" />
+      <Button fx:id="btnClear" layoutX="675.0" layoutY="567.0" mnemonicParsing="false" onAction="#clear" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="초기화" textFill="WHITE" />
+      <TableView fx:id="FreeTable" layoutY="50.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="colNum" prefWidth="83.0" text="게시번호" />
+          <TableColumn fx:id="colFreeTitle" prefWidth="457.0" text="글 제목" />
+            <TableColumn fx:id="colUser" prefWidth="86.0" text="작성자" />
+            <TableColumn fx:id="colDate" prefWidth="109.0" text="작성날짜" />
+            <TableColumn fx:id="colCount" prefWidth="64.0" text="조회수" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

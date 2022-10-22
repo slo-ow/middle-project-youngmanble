@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "adminreport">
+
+	<resultMap id="adminreportVO" class="vo.ReportVO">
+		<result column="RPT_NUM" property="rpt_num"/>
+		<result column="RPT_TRGTER_ID" property="rpt_trgter_id"/>
+		<result column="RPT_RESIST_DAY" property="rpt_resist_day"/>
+		<result column="RPT_CN" property="rpt_cn"/>
+		<result column="RPT_MEM_ID" property="rpt_mem_id"/>
+		<result column="RPT_PROST" property="rpt_prost"/>
+		<result column="RPT_TITLE" property="rpt_title"/>
+	</resultMap>
+
+	<select id="selectBoardList" resultMap="adminreportVO">
+		SELECT
+			RPT_NUM,
+			RPT_TRGTER_ID,
+			RPT_RESIST_DAY,
+			RPT_CN,
+			RPT_MEM_ID,
+			RPT_PROST,
+			RPT_TITLE
+		FROM REPORT
+		WHERE 1=1
+		<isNotEmpty property="rpt_trgter_id" prepend="AND">
+			RPT_TRGTER_ID LIKE '%'||#rpt_trgter_id#||'%'
+		</isNotEmpty>
+		<isNotEmpty property="rpt_title" prepend="AND">
+			RPT_TITLE LIKE '%'||#rpt_title#||'%'
+		</isNotEmpty>	
+		ORDER BY RPT_PROST
+	</select>
+
+
+	<select id="selectBoard" parameterClass="string" resultMap="adminreportVO">
+		SELECT
+			RPT_NUM,
+			RPT_TRGTER_ID,
+			RPT_RESIST_DAY,
+			RPT_CN,
+			RPT_MEM_ID,
+			RPT_PROST,
+			RPT_TITLE
+		FROM REPORT
+		WHERE RPT_NUM = #rpt_num#
+	</select>
+
+	<delete id="deleteBoard" parameterClass="string">
+		DELETE FROM REPORT
+		WHERE RPT_NUM = #rpt_num#
+	</delete>
+
+	<update id="updateBoard" parameterClass="string">
+		UPDATE REPORT
+		SET RPT_PROST = 'Complete'
+		WHERE RPT_NUM = #rpt_num#
+	</update>
+
+
+	<insert id="insertBlack" parameterClass="string">
+		INSERT INTO BLACKLIST
+			(BLK_CODE,BLK_MEM_ID,BLK_RESIST_DAY,BLK_RES_REGI,BLK_WRN_NUM,BLK_EMAIL)
+		VALUES
+			(
+				(SELECT NVL(MAX(TO_NUMBER(BLK_CODE)),0)+1 FROM BLACKLIST),
+				#rpt_mem_id#,
+				SYSDATE,
+				'BLACKLIST에 추가되었습니다.',
+				'1',
+				(SELECT MEM_EMAIL FROM MEMBER WHERE MEM_ID=#rpt_mem_id#)
+			)
+	</insert>
+
+
+
+
+</sqlMap>

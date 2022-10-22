@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="cnPane" prefHeight="600.0" prefWidth="571.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminReportCnController">
+   <children>
+      <TextField fx:id="tfTitle" layoutX="194.0" layoutY="50.0" minHeight="-Infinity" prefHeight="32.0" prefWidth="359.0" promptText="신고제목">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="99.0" layoutY="50.0" prefHeight="32.0" prefWidth="73.0" style="-fx-border-color: #ffffff;" text="신고명" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taCn" layoutY="147.0" prefHeight="380.0" prefWidth="571.0" />
+      <Label fx:id="laReId" alignment="CENTER" layoutX="194.0" layoutY="95.0" prefHeight="32.0" prefWidth="73.0" text="신고자ID" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="laMemId" alignment="CENTER" layoutX="425.0" layoutY="95.0" prefHeight="32.0" prefWidth="87.0" text="신고당한ID" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBack" layoutX="10.0" layoutY="541.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="551.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="되돌아가기" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label fx:id="laNum" alignment="CENTER" layoutX="36.0" layoutY="50.0" prefHeight="32.0" prefWidth="45.0" style="-fx-border-color: #ffffff;" text="NUM" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="laReId1" alignment="CENTER" layoutX="99.0" layoutY="95.0" prefHeight="32.0" prefWidth="73.0" style="-fx-border-color: #ffffff;" text="신고자ID" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="laMemId1" alignment="CENTER" layoutX="315.0" layoutY="95.0" prefHeight="32.0" prefWidth="87.0" style="-fx-border-color: #ffffff;" text="신고당한ID" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

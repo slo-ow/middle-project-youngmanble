@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="FaqFormPane" prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminFaqFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="46.0" prefHeight="30.0" prefWidth="115.0" style="-fx-border-color: white;" text="제목" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txFaqtitle" alignment="CENTER" layoutX="139.0" layoutY="46.0" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="429.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="582.0" layoutY="47.0" prefHeight="28.0" prefWidth="204.0" style="-fx-border-color: #ffffff;" text="FAQ 작성" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taFaqContent" layoutY="100.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #002930;" />
+      <Button fx:id="btnFaqWrite" layoutX="281.0" layoutY="546.0" mnemonicParsing="false" onAction="#wirte" prefHeight="28.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="등록" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnFaqCancel" layoutX="415.0" layoutY="546.0" mnemonicParsing="false" onAction="#cancel" prefHeight="28.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="취소" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

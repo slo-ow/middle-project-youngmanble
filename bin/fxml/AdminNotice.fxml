@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="notiPane" prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminNoticeController">
+   <children>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="800.0" style="-fx-border-color: #ffffff;" text="공지사항 게시판" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutY="51.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="colNotiNum" prefWidth="75.0" text="게시번호" />
+          <TableColumn fx:id="colNotiTitle" prefWidth="514.0" text="공지제목" />
+            <TableColumn fx:id="colWriter" minWidth="0.0" prefWidth="76.0" text="작성자" />
+            <TableColumn fx:id="colDate" prefWidth="70.0" text="작성일" />
+            <TableColumn fx:id="colViewNum" prefWidth="64.0" text="조회수" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnWrite" layoutX="330.0" layoutY="561.0" mnemonicParsing="false" onAction="#gotoNoticeForm" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="게시글 쓰기" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

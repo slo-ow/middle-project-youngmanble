@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="black">
+	<!-- 다음시간에 : typeAlias -->
+	<!-- <typeAlias alias="map" type="java.util.Map"/> -->
+	<typeAlias alias="blackVO" type="vo.blacklistVO"/>
+	
+	<!-- 
+	<select id="loginCount" parameterClass="map" resultClass="int">
+	SELECT COUNT(MEM_ID)
+	FROM   MEMBER
+	WHERE  MEM_ID = #mem_id#
+	  AND  MEM_PASS = #mem_pass#
+	</select> -->
+<!-- 
+	<select id="getMemberInfo" parameterClass="string" resultClass="memberVO">
+	SELECT * 
+	FROM   MEMBER
+	WHERE  MEM_ID = #mem_id#
+	</select>
+	 -->
+	
+	<select id="getMemberList" parameterClass="blackVO" resultClass="blackVO">
+	SELECT *
+	FROM blacklist
+	</select>
+	
+
+
+</sqlMap>

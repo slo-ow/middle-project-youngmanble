@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "blackboard">
+
+	<resultMap id="blackboardVO" class="vo.blacklistVO">
+		<result column="BLK_CODE" property="blk_code"/>
+		<result column="BLK_MEM_ID" property="blk_mem_id"/>
+		<result column="BLK_RESIST_DAY" property="blk_resist_day"/>
+		<result column="BLK_WRN_NUM" property="blk_wrn_num"/>
+		<result column="BLK_RES_REGI" property="blk_res_regi"/>
+		<result column="BLK_EMAIL" property="blk_email"/>	
+	</resultMap>
+	
+	<select id="selectBoardList" resultMap="blackboardVO">
+		SELECT
+			BLK_CODE,
+			BLK_MEM_ID,
+			BLK_RESIST_DAY,
+		    BLK_WRN_NUM,
+	        BLK_RES_REGI,
+	        BLK_EMAIL
+	    FROM BLACKLIST
+	    WHERE 1=1
+	    <isNotEmpty property="blk_code" prepend="AND">
+	    	BLK_CODE LIKE '%'||#blk_code#||'%'
+	    </isNotEmpty>
+	    <isNotEmpty property="blk_mem_id" prepend="AND">
+	    	BLK_MEM_ID LIKE '%'||#blk_mem_id#||'%'
+	    </isNotEmpty>
+	</select>
+
+	<delete id="deleteBoard" parameterClass="string">
+		DELETE FROM BLACKLIST
+		WHERE BLK_MEM_ID = #blk_mem_id#
+	</delete>
+
+
+
+
+
+
+
+</sqlMap>

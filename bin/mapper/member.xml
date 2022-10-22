@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+	<!-- 다음시간에 : typeAlias -->
+	<!-- <typeAlias alias="map" type="java.util.Map"/> -->
+	<typeAlias alias="memberVO" type="vo.MemberVO"/>
+	
+	
+	<select id="loginCount" parameterClass="map" resultClass="int">
+	SELECT COUNT(MEM_ID)
+	FROM   MEMBER
+	WHERE  MEM_ID = #mem_id#
+	  AND  MEM_PASS = #mem_pass#
+	</select>
+
+	<select id="getMemberInfo" parameterClass="string" resultClass="memberVO">
+	SELECT * 
+	FROM   MEMBER
+	WHERE  MEM_ID = #mem_id#
+	</select>
+	
+	
+	<select id="getMemberList" parameterClass="memberVO" resultClass="memberVO">
+	SELECT *
+	FROM MEMBER
+	</select>
+	
+	<!-- <insert id="memberInsert" parameterClass="memberVO">
+	INSERT INTO
+	MEMBER(MEM_ID,MEM_SE,MEM_NAME,MEM_SEXDSTN,MEM_IHIDNUM,MEM_PASS,MEM_MBP,MEM_EMAIL,MEM_RESIST_DAY)
+	VALUES(#mem_id#,#mem_se#,#mem_name#,#mem_sexdstn#,#mem_ihidnum#,#mem_pass#,#mem_mbp#,#mem_email#,#mem_resist_day#)	
+	</insert> -->
+	
+	<insert id="memberInsert" parameterClass="memberVO">
+	INSERT INTO
+	MEMBER(MEM_ID,MEM_NAME,MEM_SEXDSTN,MEM_IHIDNUM,MEM_PASS,MEM_MBP,MEM_EMAIL,MEM_PROPIC)
+	VALUES(#mem_id#,#mem_name#,#mem_sexdstn#,#mem_ihidnum#,#mem_pass#,#mem_mbp#,#mem_email#,#mem_propic#)	
+	</insert>
+
+	<update id="memberUpdate" parameterClass="memberVO">
+	UPDATE MEMBER
+	SET MEM_SE = #mem_se#,MEM_NAME = #mem_name#,MEM_SEXDSTN = #mem_sexdstn#
+	WHERE MEM_ID = #mem_id#
+	</update>
+	
+	<delete id="memberDelete">
+	DELETE 
+	FROM MEMBER
+	WHERE MEM_ID = #mem_id#
+	</delete>
+	
+	<select id="checkId" parameterClass="memberVO" resultClass="int">
+	SELECT COUNT(MEM_ID)
+	FROM MEMBER
+	WHERE MEM_ID = #mem_id#		 
+	</select>
+	
+	<update id="infoUpdate">
+	UPDATE MEMBER
+	SET
+	   MEM_ID=#mem_id#,
+	   MEM_PASS=#mem_pass#,
+	   MEM_NAME=#mem_name#,
+	   MEM_IHIDNUM=#mem_ihidnum#,
+	   MEM_MBP=#mem_mbp#,
+	   MEM_EMAIL=#mem_email#,
+	   MEM_PROPIC=#mem_propic#
+	WHERE
+	   MEM_ID=#mem_id#
+	</update>
+	
+	<select id="getSession" parameterClass="string" resultClass="memberVO">
+	SELECT *
+	FROM MEMBER
+	WHERE MEM_ID = #mem_id#
+	</select>
+	
+	<select id="getName" parameterClass="string" resultClass="memberVO">
+	SELECT *
+	FROM MEMBER
+	WHERE MEM_NAME = #mem_name#
+	</select>
+</sqlMap>

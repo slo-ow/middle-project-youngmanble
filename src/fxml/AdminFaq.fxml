@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="FaqPane" prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminFaqController">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="47.0" prefWidth="800.0" style="-fx-border-color: #000000; -fx-border-color: #ffffff;" text="FAQ 게시판" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="FaqTable" layoutY="44.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="colFaqNum" prefWidth="75.0" text="문의번호" />
+          <TableColumn fx:id="colFaqTitle" prefWidth="489.0" text="문의제목" />
+            <TableColumn fx:id="colFaqWriter" prefWidth="67.0" text="작성자" />
+            <TableColumn fx:id="colFaqDate" prefWidth="113.0" text="작성일" />
+            <TableColumn fx:id="colFaqView" prefWidth="55.0" text="조회수" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnFaqWrite" alignment="CENTER" layoutX="312.0" layoutY="557.0" mnemonicParsing="false" onAction="#gotoFaqForm" prefHeight="39.0" prefWidth="176.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="글작성" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

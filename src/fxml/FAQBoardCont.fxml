@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="FAQBoardPane" prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.FAQBoardController">
+   <children>
+      <ImageView fx:id="backImage" fitHeight="618.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="31.0" fitWidth="89.0" layoutX="356.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FAQBoard.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="382.0" layoutY="4.0" opacity="0.0" text="FAQ">
+         <font>
+            <Font name="1HoonWhitecat Regular" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="FAQBoard" layoutX="14.0" layoutY="33.0" prefHeight="535.0" prefWidth="772.0" />
+      <TextField fx:id="txtSearch" layoutX="270.0" layoutY="581.0" onAction="#insertSearch" prefHeight="23.0" prefWidth="260.0" />
+      <ComboBox fx:id="searchCase" layoutX="179.0" layoutY="581.0" onAction="#viewSearchCase" prefHeight="23.0" prefWidth="82.0" style="-fx-background-color: lightgray;" />
+      <Button fx:id="btnSearch" layoutX="542.0" layoutY="581.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: black;" text="검색" textFill="WHITE" />
+      <Label layoutX="115.0" layoutY="585.0" text="검색기준" />
+   </children>
+</Pane>

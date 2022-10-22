@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="dropPane" prefHeight="618.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.DropAccountController">
+   <children>
+      <ImageView fitHeight="618.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="134.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="회원탈퇴" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoUpdateInfo" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="회원정보수정" textFill="WHITE" />
+      <Button layoutX="266.0" layoutY="320.0" mnemonicParsing="false" onAction="#dropMember" prefHeight="62.0" prefWidth="105.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="회원 탈퇴" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label fx:id="label_logo" layoutX="266.0" layoutY="203.0" style="-fx-border-color: red;" text="정말 탈퇴하시겠습니까?" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="429.0" layoutY="323.0" mnemonicParsing="false" onAction="#cancel" prefHeight="62.0" prefWidth="105.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="취소" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+   </children>
+</Pane>

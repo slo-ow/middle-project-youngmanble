@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "FAQboard">
+
+
+
+	<!-- 데이터를 select할 떄 vo에 매칭시켜서 담아오기 위한 설정 -->
+	<resultMap id="FaqVO" class="vo.FaqVO">
+		<result column="FQ_NUM" property="faqNum"/>
+		<result column="FQ_SJ" property="faqSubject"/>
+		<result column="FQ_MEM_ID" property="faqMemid"/>
+		<result column="FQ_WRDATE" property="faqDate"/>
+		<result column="FQ_CN" property="faqContent"/>
+		<result column="FQ_PGV" property="faqView"/>
+	</resultMap>
+	
+	
+	
+	
+	<select id="selectBoardList" resultMap="FaqVO">
+		SELECT
+			FQ_NUM,
+			FQ_SJ,
+			FQ_MEM_ID,
+			FQ_WRDATE,
+			FQ_CN,
+			FQ_PGV
+		FROM
+			FAQ
+		WHERE 1=1
+		<isNotEmpty property="faqSubject" prepend="AND">
+			FQ_SJ LIKE '%'||#faqSubject#||'%'
+		</isNotEmpty>
+		<isNotEmpty property="faqMemid" prepend="AND">
+			FQ_MEM_ID LIKE '%'||#faqMemid#||'%'
+		</isNotEmpty>
+		ORDER BY TO_NUMBER(FQ_NUM) DESC
+	</select>
+	
+	
+	
+	
+	<select id="selectBoard" resultMap="FaqVO">
+		SELECT
+			FQ_NUM,
+			FQ_SJ,
+			FQ_MEM_ID,
+			FQ_WRDATE,
+			FQ_CN,
+			FQ_PGV
+		FROM
+			FAQ
+		WHERE FQ_NUM=#faqNum#
+		ORDER BY TO_NUMBER(FQ_NUM) ASC
+	</select>
+	
+	
+	
+	
+	<insert id="insertBoard">
+		INSERT INTO FAQ
+			(FQ_NUM, FQ_SJ, FQ_MEM_ID, FQ_WRDATE, FQ_CN, FQ_PGV)
+		VALUES
+			(
+				(SELECT NVL(MAX(TO_NUMBER(FQ_NUM)),0)+1 FROM FAQ),
+				#faqSubject#,
+				'icet25',
+				SYSDATE,
+				#faqContent#,
+				'0'
+			)
+	</insert>
+	
+	
+	
+	<update id="updateBoard">
+		UPDATE FAQ
+		SET
+			FQ_SJ=#faqSubject#,
+			FQ_CN=#faqContent#
+		WHERE
+			FQ_NUM =#faqNum#
+	</update>
+	
+	
+	
+	
+	<delete id="deleteBoard">
+		DELETE FROM FAQ
+		WHERE FQ_NUM=#faqNum#
+	</delete>
+	
+	
+	
+	
+	
+	<update id="plusView">
+	UPDATE FAQ
+	SET
+		FQ_PGV = TO_NUMBER(FQ_PGV)+1
+	WHERE
+		FQ_NUM=#faqNum#
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	<select id="nextContent" resultMap="FaqVO">
+		SELECT
+			FQ_NUM,
+			FQ_SJ,
+			FQ_MEM_ID,
+			FQ_WRDATE,
+			FQ_CN,
+			FQ_PGV
+		FROM
+			FAQ
+		WHERE FQ_NUM IN (
+					   	   SELECT MIN(TO_NUMBER(FQ_NUM))
+						   FROM FAQ
+						   WHERE TO_NUMBER(FQ_NUM) > TO_NUMBER(#faqNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	<select id="previousContent" resultMap="FaqVO">
+		SELECT
+			FQ_NUM,
+			FQ_SJ,
+			FQ_MEM_ID,
+			FQ_WRDATE,
+			FQ_CN,
+			FQ_PGV
+		FROM
+			FAQ
+		WHERE FQ_NUM IN (
+					   	   SELECT MAX(TO_NUMBER(FQ_NUM))
+						   FROM FAQ
+						   WHERE TO_NUMBER(FQ_NUM) <![CDATA[<]]> TO_NUMBER(#faqNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</sqlMap>

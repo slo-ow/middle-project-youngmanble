@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "notice">
+
+
+
+	<!-- 데이터를 select할 떄 vo에 매칭시켜서 담아오기 위한 설정 -->
+	<resultMap id="NoticeVO" class="vo.NoticeVO">
+		<result column="NTC_NUM" property="ntcNum"/>
+		<result column="NTC_SJ" property="ntcSubject"/>
+		<result column="NTC_MEM_ID" property="ntcMemid"/>
+		<result column="NTC_WRDATE" property="ntcDate"/>
+		<result column="NTC_CN" property="ntcContent"/>
+		<result column="NTC_PGV" property="ntcView"/>
+	</resultMap>
+	
+	
+	
+	
+	<select id="selectBoardList" resultMap="NoticeVO">
+		SELECT
+			NTC_NUM,
+			NTC_SJ,
+			NTC_MEM_ID,
+			NTC_WRDATE,
+			NTC_CN,
+			NTC_PGV
+		FROM
+			NOTICE
+		WHERE 1=1
+		<isNotEmpty property="ntcSubject" prepend="AND">
+			NTC_SJ LIKE '%'||#ntcSubject#||'%'
+		</isNotEmpty>
+		<isNotEmpty property="ntcMemid" prepend="AND">
+			NTC_MEM_ID LIKE '%'||#ntcMemid#||'%'
+		</isNotEmpty>
+		ORDER BY TO_NUMBER(NTC_NUM) DESC
+	</select>
+	
+	
+	
+	
+	<select id="selectBoard" resultMap="NoticeVO">
+		SELECT
+			NTC_NUM,
+			NTC_SJ,
+			NTC_MEM_ID,
+			NTC_WRDATE,
+			NTC_CN,
+			NTC_PGV
+		FROM
+			NOTICE
+		WHERE NTC_NUM=#ntcNum#
+		ORDER BY TO_NUMBER(NTC_NUM) ASC
+	</select>
+	
+	
+	
+	
+	<insert id="insertBoard">
+		INSERT INTO NOTICE
+			(NTC_NUM, NTC_SJ, NTC_MEM_ID, NTC_WRDATE, NTC_CN, NTC_PGV)
+		VALUES
+			(
+				(SELECT NVL(MAX(TO_NUMBER(NTC_NUM)),0)+1 FROM NOTICE),
+				#ntcSubject#,
+				'icet25',
+				SYSDATE,
+				#ntcContent#,
+				'1'
+			)
+	</insert>
+	
+	
+	
+	<update id="updateBoard">
+		UPDATE NOTICE
+		SET
+			NTC_SJ=#ntcSubject#,
+			NTC_MEM_ID=#ntcMemid#,
+			NTC_WRDATE=SYSDATE,
+			NTC_CN=#ntcContent#
+		WHERE
+			NTC_NUM =#ntcNum#
+	</update>
+	
+	
+	
+	
+	<delete id="deleteBoard">
+		DELETE FROM NOTICE
+		WHERE NTC_NUM=#ntcNum#
+	</delete>
+	
+	
+	
+	<update id="plusView">
+	UPDATE NOTICE
+	SET
+		NTC_PGV = TO_NUMBER(NTC_PGV)+1
+	WHERE
+		NTC_NUM=#ntcNum#
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="nextContent" resultMap="NoticeVO">
+		SELECT
+			NTC_NUM,
+			NTC_SJ,
+			NTC_MEM_ID,
+			NTC_WRDATE,
+			NTC_CN,
+			NTC_PGV
+		FROM
+			NOTICE
+		WHERE NTC_NUM IN (
+					   	   SELECT MIN(TO_NUMBER(NTC_NUM))
+						   FROM NOTICE
+						   WHERE TO_NUMBER(NTC_NUM) > TO_NUMBER(#ntcNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="previousContent" resultMap="NoticeVO">
+		SELECT
+			NTC_NUM,
+			NTC_SJ,
+			NTC_MEM_ID,
+			NTC_WRDATE,
+			NTC_CN,
+			NTC_PGV
+		FROM
+			NOTICE
+		WHERE NTC_NUM IN (
+					   	   SELECT MAX(TO_NUMBER(NTC_NUM))
+						   FROM NOTICE
+						   WHERE TO_NUMBER(NTC_NUM) <![CDATA[<]]> TO_NUMBER(#ntcNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</sqlMap>

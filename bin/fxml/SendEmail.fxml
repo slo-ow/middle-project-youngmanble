@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="448.0" prefWidth="456.0" style="-fx-background-color: #002727;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.SendEmailController">
+   <children>
+      <ImageView fitHeight="60.0" fitWidth="52.0" layoutX="374.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/message.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="txtContent" layoutX="52.0" layoutY="161.0" prefHeight="246.0" prefWidth="369.0" />
+      <TextField fx:id="txtSubject" layoutX="52.0" layoutY="107.0" prefHeight="23.0" prefWidth="369.0" />
+      <Button layoutX="314.0" layoutY="417.0" mnemonicParsing="false" onAction="#sendEmail" style="-fx-border-color: white; -fx-background-color: #002727;" text="보내기" textFill="WHITE" />
+      <Button layoutX="379.0" layoutY="417.0" mnemonicParsing="false" onAction="#cancel" style="-fx-border-color: white; -fx-background-color: #002727;" text="취소" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="111.0" text="제목" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="161.0" text="내용" textFill="WHITE" />
+      <Label fx:id="label_logo" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="72.0" prefHeight="23.0" prefWidth="369.0" style="-fx-border-color: white;" text="메일 보내기" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="1.0" left="5.0" right="5.0" top="1.0" />
+         </padding>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</Pane>

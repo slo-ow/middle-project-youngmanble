@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.FlowPane?>
+
+<FlowPane orientation="VERTICAL" style="-fx-background-color: #002727;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.FAQContentController">
+   <children>
+      <Pane minHeight="50.0" minWidth="600.0">
+         <children>
+            <Label fx:id="label_boardId" layoutX="24.0" layoutY="18.0" textFill="WHITE" />
+            <TextField fx:id="textField_boardTitle" layoutX="72.0" layoutY="14.0" prefHeight="23.0" prefWidth="501.0" />
+         </children>
+      </Pane>
+      <Pane minHeight="50.0" minWidth="600.0">
+         <children>
+            <Label fx:id="label_boardWriter" layoutX="23.0" layoutY="18.0" text="작성자" textFill="WHITE" />
+            <Label fx:id="label_boardDate" layoutX="355.0" layoutY="18.0" text="작성일" textFill="WHITE" />
+         </children>
+      </Pane>
+      <TextArea fx:id="textArea_boardContent" minHeight="250.0" minWidth="600.0" />
+      <Pane minHeight="50.0" minWidth="600.0">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#toNext" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" text="윗글" />
+            <Button layoutX="72.0" layoutY="14.0" mnemonicParsing="false" onAction="#toPrevious" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" text="아랫글" />
+            <Button layoutX="531.0" layoutY="14.0" mnemonicParsing="false" onAction="#toList" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" text="글목록" />
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

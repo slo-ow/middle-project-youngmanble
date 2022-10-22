@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "freeboard">
+
+
+
+	<!-- 데이터를 select할 떄 vo에 매칭시켜서 담아오기 위한 설정 -->
+	<resultMap id="FreeBoardVO" class="vo.FreeBoardVO">
+		<result column="FRB_NUM" property="fbNum"/>
+		<result column="FRB_SJ" property="fbSubject"/>
+		<result column="FRB_MEM_ID" property="fbMemid"/>
+		<result column="FRB_WRDATE" property="fbDate"/>
+		<result column="FRB_CN" property="fbContent"/>
+		<result column="FRB_PGV" property="fbView"/>
+	</resultMap>
+	
+	
+	
+	
+	<select id="selectBoardList" resultMap="FreeBoardVO">
+		SELECT
+			FRB_NUM,
+			FRB_SJ,
+			FRB_MEM_ID,
+			FRB_WRDATE,
+			FRB_CN,
+			FRB_PGV
+		FROM
+			FREEBORD
+		WHERE 1=1
+		<isNotEmpty property="fbSubject" prepend="AND">
+			FRB_SJ LIKE '%'||#fbSubject#||'%'
+		</isNotEmpty>
+		<isNotEmpty property="fbMemid" prepend="AND">
+			FRB_MEM_ID LIKE '%'||#fbMemid#||'%'
+		</isNotEmpty>
+		ORDER BY TO_NUMBER(FRB_NUM) DESC
+	</select>
+	
+	
+	
+	
+	<select id="selectBoard" resultMap="FreeBoardVO">
+		SELECT
+			FRB_NUM,
+			FRB_SJ,
+			FRB_MEM_ID,
+			FRB_WRDATE,
+			FRB_CN,
+			FRB_PGV
+		FROM
+			FREEBORD
+		WHERE FRB_NUM=#fbNum#
+		ORDER BY TO_NUMBER(FRB_NUM) ASC
+	</select>
+	
+	
+	
+	
+	<insert id="insertBoard">
+		INSERT INTO FREEBORD
+			(FRB_NUM, FRB_SJ, FRB_MEM_ID, FRB_WRDATE, FRB_CN, FRB_PGV)
+		VALUES
+			(
+				(SELECT NVL(MAX(TO_NUMBER(FRB_NUM)),0)+1 FROM FREEBORD),
+				#fbSubject#,
+				#fbMemid#,
+				SYSDATE,
+				#fbContent#,
+				'0'
+			)
+	</insert>
+	
+	
+	
+	<update id="updateBoard">
+		UPDATE FREEBORD
+		SET
+			FRB_SJ=#fbSubject#,
+			FRB_MEM_ID=#fbMemid#,
+			FRB_WRDATE=SYSDATE,
+			FRB_CN=#fbContent#
+		WHERE
+			FRB_NUM=#fbNum#
+	</update>
+	
+	
+	
+	
+	<delete id="deleteBoard">
+		DELETE FROM FREEBORD
+		WHERE FRB_NUM=#fbNum#
+	</delete>
+	
+	
+	
+	
+	
+	<update id="plusView">
+	UPDATE FREEBORD
+	SET
+		FRB_PGV = TO_NUMBER(FRB_PGV)+1
+	WHERE
+		FRB_NUM=#fbNum#
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	<select id="nextContent" resultMap="FreeBoardVO">
+		SELECT
+			FRB_NUM,
+			FRB_SJ,
+			FRB_MEM_ID,
+			FRB_WRDATE,
+			FRB_CN,
+			FRB_PGV
+		FROM
+			FREEBORD
+		WHERE FRB_NUM IN (
+					   	   SELECT MIN(TO_NUMBER(FRB_NUM))
+						   FROM FREEBORD
+						   WHERE TO_NUMBER(FRB_NUM) > TO_NUMBER(#fbNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	
+	<select id="previousContent" resultMap="FreeBoardVO">
+		SELECT
+			FRB_NUM,
+			FRB_SJ,
+			FRB_MEM_ID,
+			FRB_WRDATE,
+			FRB_CN,
+			FRB_PGV
+		FROM
+			FREEBORD
+		WHERE FRB_NUM IN (
+					   	   SELECT MAX(TO_NUMBER(FRB_NUM))
+						   FROM FREEBORD
+						   WHERE TO_NUMBER(FRB_NUM) <![CDATA[<]]> TO_NUMBER(#fbNum#)
+						 )
+	</select>
+	
+	
+	
+	
+	
+	
+	
+</sqlMap>

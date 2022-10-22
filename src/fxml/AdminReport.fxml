@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminReportController">
+   <children>
+      <TableView fx:id="ReportTable" layoutY="57.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="colNum" prefWidth="62.0" text="번호" />
+          <TableColumn fx:id="colVIcId" prefWidth="84.0" text="신고자ID" />
+          <TableColumn fx:id="colReportTitle" prefWidth="339.0" text="신고제목" />
+            <TableColumn fx:id="colSuspId" prefWidth="135.0" text="신고당한ID" />
+            <TableColumn fx:id="colDate" prefWidth="109.0" text="신고일" />
+            <TableColumn fx:id="colProst" prefWidth="70.0" text="처리여부" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" prefHeight="60.0" prefWidth="800.0" text="신고내용" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutY="564.0" prefHeight="39.0" prefWidth="800.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" minHeight="-Infinity" prefHeight="29.0" prefWidth="83.0" style="-fx-border-color: #ffffff;" text="번호" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfReportId" prefHeight="8.0" prefWidth="400.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#add" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="처리" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="삭제" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBlackList" mnemonicParsing="false" onAction="#black" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="추가" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</Pane>

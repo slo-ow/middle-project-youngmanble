@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminPageController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/back3.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="laLogo" alignment="CENTER" onMouseClicked="#gotoAdmin" prefHeight="70.0" prefWidth="450.0" text="YoungManble" textFill="WHITE">
+         <font>
+            <Font name="RixToyGray" size="64.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutY="70.0" prefHeight="80.0" prefWidth="1024.0" spacing="3.0">
+         <children>
+            <Button fx:id="btnNotice" mnemonicParsing="false" onAction="#gotoNotice" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="공지사항" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFAQ" mnemonicParsing="false" onAction="#gotoFAQ" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="FAQ" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFree" mnemonicParsing="false" onAction="#gotoFree" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="자유게시판" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBlackList" mnemonicParsing="false" onAction="#gotoBlackList" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="블랙리스트관리" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInquiry" mnemonicParsing="false" onAction="#gotoInquiry" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="회원문의관련" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnReport" mnemonicParsing="false" onAction="#gotoReport" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="신고관리" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUserCheck" mnemonicParsing="false" onAction="#gotoUserCheck" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="회원관리" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnStats" mnemonicParsing="false" onAction="#gotoStats" opacity="0.0" style="-fx-background-color: black;" text="통계" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#gotoUpdate" opacity="0.0" style="-fx-background-color: black;" text="점검" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#gotoLogout" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="로그아웃" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Pane fx:id="adminPane" layoutY="150.0" prefHeight="618.0" prefWidth="800.0" />
+      <VBox layoutX="850.0" layoutY="150.0" prefHeight="618.0" prefWidth="150.0" />
+   </children>
+</Pane>

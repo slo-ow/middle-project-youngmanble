@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="accusePane" prefHeight="618.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.AccuseController">
+   <children>
+      <ImageView fx:id="backImage" fitHeight="618.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="faulImg" fitHeight="40.0" fitWidth="137.0" layoutX="38.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/불량행위신고.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="reportId" fitHeight="58.0" fitWidth="31.0" layoutX="135.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/불량ID.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="repTitleImg" fitHeight="51.0" fitWidth="40.0" layoutX="135.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/제목.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="contentImg" fitHeight="58.0" fitWidth="40.0" layoutX="132.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/내용.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtName" layoutX="210.0" layoutY="109.0" prefHeight="23.0" prefWidth="137.0" />
+      <TextArea fx:id="txtContents" layoutX="210.0" layoutY="222.0" prefHeight="215.0" prefWidth="459.0" />
+      <TextField fx:id="txtTitle" layoutX="210.0" layoutY="169.0" prefHeight="23.0" prefWidth="319.0" />
+      <Button fx:id="applyBtn" layoutX="355.0" layoutY="516.0" mnemonicParsing="false" onAction="#apply" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="등록" textFill="WHITE" />
+      <Button fx:id="canBtn" layoutX="405.0" layoutY="516.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="취소" textFill="WHITE" />
+   </children>
+</Pane>

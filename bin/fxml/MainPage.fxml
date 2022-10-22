@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="mainPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controller.MainPageController">
+   <children>
+      <ImageView fx:id="mainBacking" fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image></ImageView>
+      <Label fx:id="youngmanble" layoutX="299.0" layoutY="42.0" text="Youngmanble" textFill="WHITE">
+         <font>
+            <Font name="RixToyGray" size="78.0" />
+         </font>
+      </Label>
+      <Button fx:id="mabBtn" layoutX="233.0" layoutY="321.0" mnemonicParsing="false" onAction="#mab" prefHeight="166.0" prefWidth="232.0" style="-fx-border-color: red;">
+         <graphic>
+            <ImageView fx:id="mabimg" fitHeight="158.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/모두의마블.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="tetBtn" layoutX="573.0" layoutY="321.0" mnemonicParsing="false" onAction="#tet" prefHeight="161.0" prefWidth="215.0" style="-fx-border-color: red;">
+         <graphic>
+            <ImageView fx:id="tetimg" fitHeight="176.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/테트리스.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="112.0" fitWidth="64.0" layoutX="44.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/고객센터.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="108.0" layoutX="108.0" layoutY="89.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/MainPage고객센터.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="label_info" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="689.0" layoutY="99.0" prefHeight="23.0" prefWidth="130.0" textFill="WHITE" />
+      <Button fx:id="gotoAccountBtn" layoutX="834.0" layoutY="99.0" mnemonicParsing="false" onAction="#gotoAccount" style="-fx-background-color: #000000; -fx-border-color: red;" text="내 정보 " textFill="WHITE" />
+      <Button fx:id="logoutBtn" layoutX="909.0" layoutY="99.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #000000; -fx-border-color: red;" text="로그아웃" textFill="WHITE" />
+      <Label fx:id="label_center" layoutX="116.0" layoutY="87.0" onMouseClicked="#gotoCenter" opacity="0.0" prefHeight="48.0" prefWidth="92.0" text="고객센터" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

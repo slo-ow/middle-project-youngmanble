@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="mainPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.CustomerHomeController">
+   <children>
+      <ImageView fx:id="backImage" fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image></ImageView>
+      <Label fx:id="logo" layoutX="20.0" onMouseClicked="#gotoMain" text="Youngmanble" textFill="WHITE">
+         <font>
+            <Font name="RixToyGray" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCenter" layoutX="14.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoCenter" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="고객센터" textFill="WHITE" />
+      <Button fx:id="btnNotice" layoutX="108.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoNotice" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="공지사항" textFill="WHITE" />
+      <Button fx:id="btnFAQ" layoutX="201.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoFAQ" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="FAQ" textFill="WHITE" />
+      <Button fx:id="btnFreeboard" layoutX="294.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoFreeboard" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="자유게시판" textFill="WHITE" />
+      <Button fx:id="btnAccuse" layoutX="387.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoAccuse" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="신고" textFill="WHITE" />
+      <Button fx:id="btnEnquire" layoutX="481.0" layoutY="64.0" mnemonicParsing="false" onAction="#gotoEnquire" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="1:1문의" textFill="WHITE" />
+      <Button fx:id="logout" layoutX="925.0" layoutY="97.0" mnemonicParsing="false" onAction="#executeLogout" prefHeight="0.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="로그아웃" textFill="WHITE" />
+      <Button fx:id="btnMyAccount" layoutX="837.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewMyAccount" prefHeight="0.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="내 정보" textFill="WHITE" />
+      <ImageView fx:id="banner" fitHeight="618.0" fitWidth="154.0" layoutX="827.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane fx:id="paneSpace" layoutX="20.0" layoutY="136.0" prefHeight="618.0" prefWidth="800.0" />
+      <Label fx:id="label_MyName" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="717.0" layoutY="98.0" prefHeight="23.0" prefWidth="103.0" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="840.0" layoutY="136.0" mnemonicParsing="false" onAction="#gotoMap" prefHeight="29.0" prefWidth="171.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="고객센터로 오시는 길" textFill="WHITE" />
+   </children>
+</Pane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="upinfoPane" prefHeight="618.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.UpdateInfoController">
+   <children>
+      <ImageView fitHeight="618.0" fitWidth="800.0" layoutX="-7.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="136.0" layoutY="14.0" mnemonicParsing="false" onAction="#dropMember" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="회원탈퇴" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoUpdateInfo" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="회원정보수정" textFill="WHITE" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/UpdateInfoCont제목.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="logo" layoutX="16.0" layoutY="61.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white;">
+         <font>
+            <Font name="1HoonWhitecat Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="132.0" text="ID " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" disable="true" layoutX="252.0" layoutY="128.0" prefHeight="23.0" prefWidth="146.0" />
+      <TextField fx:id="txtName" disable="true" layoutX="252.0" layoutY="252.0" prefHeight="23.0" prefWidth="146.0" />
+      <Label layoutX="113.0" layoutY="211.0" text="비밀번호 확인" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="182.0" layoutY="256.0" text="이름" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="169.0" text="비밀번호 " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="297.0" text="생년월일 " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtYear" disable="true" layoutX="252.0" layoutY="293.0" prefHeight="23.0" prefWidth="146.0" />
+      <Label layoutX="151.0" layoutY="340.0" text="휴대전화" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPhoneNumber" layoutX="252.0" layoutY="336.0" prefHeight="23.0" prefWidth="146.0" />
+      <Label layoutX="163.0" layoutY="382.0" text="E-mail" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmAdd" layoutX="252.0" layoutY="378.0" prefHeight="23.0" prefWidth="216.0" />
+      <Button layoutX="252.0" layoutY="477.0" mnemonicParsing="false" onAction="#updateInfo" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="수정" textFill="WHITE" />
+      <Button layoutX="325.0" layoutY="477.0" mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="취소" textFill="WHITE" />
+      <PasswordField fx:id="txtPassword" layoutX="252.0" layoutY="165.0" prefHeight="23.0" prefWidth="146.0" />
+      <PasswordField fx:id="txtPwCheck" layoutX="252.0" layoutY="207.0" prefHeight="23.0" prefWidth="146.0" />
+      <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="200.0" layoutX="474.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="493.0" layoutY="281.0" mnemonicParsing="false" onAction="#updatePicture" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="프로필사진 수정" textFill="WHITE" />
+   </children>
+</Pane>

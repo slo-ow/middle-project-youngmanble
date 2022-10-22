@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="findPw_Pane" prefHeight="225.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controller.FindPwController">
+   <children>
+      <Accordion fx:id="accord2" prefHeight="227.0" prefWidth="367.0">
+        <panes>
+          <TitledPane fx:id="titleP" animated="true" prefHeight="243.0" prefWidth="367.0" text="가입된 휴대전화로 인증" visible="true">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label graphicTextGap="64.0" layoutX="14.0" layoutY="6.0" text="회원정보에 등록한 휴대전화로 인증" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label graphicTextGap="64.0" layoutX="14.0" layoutY="31.0" text="회원가입시 입력하신 정보 입니다." textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="60.0" text="아이디" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="95.0" text="휴대전화" textFill="WHITE" />
+                        <Label layoutX="79.0" layoutY="150.0" text="인증번호가 오지 않나요?" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="find_PWID" layoutX="79.0" layoutY="58.0" prefHeight="22.0" prefWidth="94.0">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="find_PWP" alignment="CENTER" layoutX="79.0" layoutY="91.0" promptText="휴대전화번호">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="resultMyNumber" alignment="CENTER" layoutX="79.0" layoutY="124.0" promptText="인증번호 숫자 입력">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="227.0" layoutY="92.0" mnemonicParsing="false" onAction="#getMyPWN" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="인증번호받기" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Button>
+                        <ToggleButton fx:id="qtoggle2" layoutX="202.0" layoutY="149.0" mnemonicParsing="false" onAction="#addQToggle2" style="-fx-background-color: #ffffff;" text="?">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </ToggleButton>
+                        <TextField fx:id="find_PWN" layoutX="227.0" layoutY="57.0" prefHeight="22.0" prefWidth="82.0">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="190.0" layoutY="62.0" text="이름" textFill="WHITE" />
+                        <Button layoutX="227.0" layoutY="124.0" mnemonicParsing="false" onAction="#ok_getMyNumber" prefHeight="22.0" prefWidth="82.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="확인" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="true" text="본인확인 이메일로 인증">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="229.0" prefWidth="365.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label graphicTextGap="64.0" layoutX="14.0" layoutY="28.0" text="회원가입시 입력하신 이메일 주소 입니다." textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label graphicTextGap="64.0" layoutX="14.0" layoutY="6.0" text="본인확인 이메일로 인증" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="60.0" text="아이디" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="95.0" text="이메일 주소" textFill="WHITE" />
+                        <Label layoutX="82.0" layoutY="144.0" text="인증번호가 오지 않나요?" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="find_PWMID" layoutX="83.0" layoutY="56.0" prefHeight="22.0" prefWidth="94.0">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="find_PWE" layoutX="83.0" layoutY="91.0">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="resultMyMail" alignment="CENTER" layoutX="83.0" layoutY="121.0" promptText="인증번호 숫자 입력">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="227.0" layoutY="92.0" mnemonicParsing="false" onAction="#getMyMail" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="인증번호받기" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Button>
+                        <ToggleButton fx:id="qtoggle3" layoutX="205.0" layoutY="145.0" mnemonicParsing="false" onAction="#addQToggle3" style="-fx-background-color: #ffffff;" text="?">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </ToggleButton>
+                        <TextField fx:id="find_PWMN" layoutX="220.0" layoutY="56.0" prefHeight="22.0" prefWidth="94.0">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="226.0" layoutY="121.0" mnemonicParsing="false" onAction="#ok_getMyMail" prefHeight="22.0" prefWidth="82.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="확인" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="190.0" layoutY="62.0" text="이름" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</Pane>

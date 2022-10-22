@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane prefHeight="618.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="admin.controller.AdminStatsController">
+   <children>
+      <Label prefHeight="50.0" prefWidth="350.0" text="하루사이트 접속자수">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <TableView layoutY="50.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="colDate" prefWidth="200.0" text="DATE" />
+          <TableColumn fx:id="colSiteAccessCount" prefWidth="600.0" text="사이트 접속자 수 " />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="btnDatePicker" layoutX="275.0" layoutY="560.0" onAction="#Picker" prefHeight="39.0" prefWidth="200.0" />
+      <Button fx:id="btnFind" layoutX="500.0" layoutY="560.0" mnemonicParsing="false" onAction="#Find" text="검색">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

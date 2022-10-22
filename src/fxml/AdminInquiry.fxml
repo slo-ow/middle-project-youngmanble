@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminInquiryController">
+   <children>
+      <Button fx:id="btnChatOn" layoutX="174.0" layoutY="53.0" mnemonicParsing="false" onAction="#chaton" prefHeight="28.0" prefWidth="296.0" style="-fx-background-color: black; -fx-border-color: yellow;" text="채팅 활성화" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <Hyperlink fx:id="rinkMail" alignment="CENTER" layoutX="497.0" layoutY="54.0" onAction="#gomail" prefHeight="26.0" prefWidth="226.0" style="-fx-border-color: #ffffff;" text="https://mail.naver.com">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+      <Pane layoutY="118.0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <TextArea fx:id="taChat" layoutY="-19.0" prefHeight="425.0" prefWidth="800.0" />
+            <HBox alignment="CENTER" layoutY="406.0" prefHeight="100.0" prefWidth="800.0" spacing="20.0">
+               <children>
+                  <Button fx:id="btnEnter" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="입력" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+                  <TextField fx:id="tfChatSpace" minHeight="-Infinity" onAction="#msgForm" prefHeight="31.0" prefWidth="327.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnChatOff" mnemonicParsing="false" onAction="#chatoff" prefHeight="28.0" prefWidth="191.0" style="-fx-background-color: black; -fx-border-color: white;" text="채팅 비활성화" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <ImageView fitHeight="72.0" fitWidth="90.0" layoutX="48.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chat.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

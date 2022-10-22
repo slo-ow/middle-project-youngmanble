@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane fx:id="root" prefHeight="491.0" prefWidth="618.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controller.MediaViewController">
+   <children>
+ 		<StackPane layoutX="10.0" layoutY="4.0" prefHeight="406.0" prefWidth="488.0">
+		   <children>  
+		      <MediaView fx:id="mediaView" fitHeight="400.0" fitWidth="600.0" preserveRatio="false" />    
+		   </children>
+		</StackPane>
+		<Button fx:id="btnPlay" layoutX="473.0" layoutY="418.0" prefHeight="23.0" prefWidth="131.0" style="-fx-background-color: white;" text="재생" />
+		<Button fx:id="btnPause" layoutX="473.0" layoutY="451.0" prefHeight="23.0" prefWidth="131.0" style="-fx-background-color: white;" text="멈춤" />
+		<ProgressBar fx:id="progressBar" layoutX="10.0" layoutY="420.0" prefHeight="18.0" prefWidth="410.0" progress="0.0" />
+		<ProgressIndicator fx:id="progressIndicator" layoutX="427.0" layoutY="415.0" prefHeight="47.0" prefWidth="31.0" progress="0.0" />      	
+		<Label fx:id="labelTime" alignment="CENTER" layoutX="329.0" layoutY="439.0" prefHeight="18.0" prefWidth="98.0" text="0/0 sec" textFill="WHITE" />
+		<Slider fx:id="sliderVolume" layoutX="10.0" layoutY="459.0" prefHeight="14.0" prefWidth="410.0" showTickMarks="true" />
+   </children>
+</AnchorPane>

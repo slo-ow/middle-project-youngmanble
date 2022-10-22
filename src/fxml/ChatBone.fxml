@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="chatPane" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="570.0" style="-fx-background-color: #002727;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.ChatBoneController">
+   <children>
+      <TextArea fx:id="textAreaChat" layoutX="33.0" layoutY="106.0" prefHeight="346.0" prefWidth="504.0" />
+      <TextField fx:id="txtInsert" layoutX="33.0" layoutY="469.0" onAction="#submitMsg" prefHeight="23.0" prefWidth="504.0" />
+      <Button layoutX="356.0" layoutY="500.0" mnemonicParsing="false" onAction="#send" prefHeight="23.0" prefWidth="115.0" style="-fx-background-color: #002727; -fx-border-color: white;" text="전송" textFill="WHITE" />
+      <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="454.0" layoutY="20.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/question.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="chatLogo" alignment="CENTER" layoutX="33.0" layoutY="79.0" prefHeight="25.0" prefWidth="390.0" style="-fx-border-color: white;" text="관리자 1:1 문의" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="479.0" layoutY="500.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: #002727; -fx-border-color: white;" text="나가기" textFill="WHITE" />
+      <Button layoutX="430.0" layoutY="79.0" mnemonicParsing="false" onAction="#callServer" prefHeight="23.0" prefWidth="106.0" style="-fx-background-color: #002727; -fx-border-color: yellow;" text="관리자 호출" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

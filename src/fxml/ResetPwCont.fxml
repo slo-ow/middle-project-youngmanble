@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="resetPwPane" prefHeight="618.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.controller.ResetPwController">
+   <children>
+      <ImageView fitHeight="618.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnUpdateInfo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateInfo" prefHeight="30.0" prefWidth="105.0" text="회원정보수정" />
+      <Button fx:id="btnResetPw" layoutX="127.0" layoutY="14.0" mnemonicParsing="false" onAction="#resetPw" prefHeight="30.0" prefWidth="105.0" text="패스워드 재설정" />
+      <Button fx:id="btnDrop" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#dropMember" prefHeight="30.0" prefWidth="105.0" text="회원탈퇴" />
+      <Label layoutX="14.0" layoutY="71.0" text="내 정보" />
+      <TextArea fx:id="MyInfoArea" layoutX="14.0" layoutY="93.0" prefHeight="512.0" prefWidth="772.0" />
+   </children>
+</Pane>

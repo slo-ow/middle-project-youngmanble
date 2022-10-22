@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="FaqContentPane" prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminFaqContentController">
+   <children>
+      <Label fx:id="laFaqNum" alignment="CENTER" layoutX="48.0" layoutY="39.0" prefHeight="40.0" prefWidth="50.0" style="-fx-border-color: #FFFFFF;" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTitle" layoutX="135.0" layoutY="39.0" prefHeight="39.0" prefWidth="275.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="laFaqWriter" alignment="CENTER" layoutX="541.0" layoutY="39.0" prefHeight="40.0" prefWidth="100.0" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfDate" layoutX="652.0" layoutY="39.0" prefHeight="39.0" prefWidth="125.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="taContent" layoutX="7.0" layoutY="96.0" prefHeight="458.0" prefWidth="792.0" style="-fx-background-color: white;" />
+      <Label fx:id="laPre" alignment="CENTER" layoutX="14.0" layoutY="570.0" onMouseClicked="#gotoPre" prefHeight="30.0" prefWidth="50.0" style="-fx-border-color: #ffffff;" text="이전글" textFill="WHITE" />
+      <Label fx:id="laNext" alignment="CENTER" layoutX="75.0" layoutY="570.0" onMouseClicked="#gotoNext" prefHeight="30.0" prefWidth="58.0" style="-fx-border-color: #ffffff;" text="다음글" textFill="WHITE" />
+      <Button fx:id="btnDelete" alignment="CENTER" layoutX="648.0" layoutY="570.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="삭제" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnList" alignment="CENTER" layoutX="722.0" layoutY="570.0" mnemonicParsing="false" onAction="#showlist" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="글목록" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRewrite" alignment="CENTER" layoutX="582.0" layoutY="570.0" mnemonicParsing="false" onAction="#rewirte" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="수정" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="laFaqWriter1" alignment="CENTER" layoutX="428.0" layoutY="39.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: #FFFFFF;" text="작성자" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

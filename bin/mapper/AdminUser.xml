@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "adminuser">
+	
+	<resultMap id="adminuserVO" class="vo.MemberVO">
+		<result column="MEM_ID" property="mem_id"/>
+		<result column="MEM_NAME" property="mem_name"/>
+		<result column="MEM_SEXDSTN" property="mem_sexdstn"/>
+		<result column="MEM_IHIDNUM" property="mem_ihidnum"/>
+		<result column="MEM_MBP" property="mem_mbp"/>
+		<result column="MEM_EMAIL" property="mem_email"/>
+		<result column="BLK_WRN_NUM" property="count"/>
+	</resultMap>
+	
+	<select id="selectBoardList" resultMap="adminuserVO">
+		SELECT
+			M.MEM_ID,
+			M.MEM_NAME,
+			M.MEM_SEXDSTN,
+			M.MEM_IHIDNUM,
+			M.MEM_MBP,
+			M.MEM_EMAIL,
+			SUM(B.BLK_WRN_NUM) AS BLK_WRN_NUM
+		FROM
+			MEMBER M,
+			BLACKLIST B
+		WHERE M.MEM_ID = B.BLK_MEM_ID(+)
+		<isNotEmpty property="mem_id" prepend="AND">
+			M.MEM_ID = #mem_id#
+		</isNotEmpty>
+		<isNotEmpty property="mem_id" prepend="AND">
+			M.MEM_NAME = #mem_name#
+		</isNotEmpty>
+		GROUP BY    M.MEM_ID,
+					M.MEM_NAME,
+					M.MEM_SEXDSTN,
+					M.MEM_IHIDNUM,
+					M.MEM_MBP,
+					M.MEM_EMAIL
+	</select>
+	
+	<select id="selectBoard" resultMap="adminuserVO" parameterClass="string">
+		SELECT
+			M.MEM_ID,
+			M.MEM_NAME,
+			M.MEM_SEXDSTN,
+			M.MEM_IHIDNUM,
+			M.MEM_MBP,
+			M.MEM_EMAIL,
+			SUM(B.BLK_WRN_NUM) AS BLK_WRN_NUM
+		FROM
+			MEMBER M,
+			BLACKLIST B
+		WHERE M.MEM_ID = B.BLK_MEM_ID(+)
+		AND M.MEM_ID = #mem_id#
+		GROUP BY    M.MEM_ID,
+					M.MEM_NAME,
+					M.MEM_SEXDSTN,
+					M.MEM_IHIDNUM,
+					M.MEM_MBP,
+					M.MEM_EMAIL
+	
+	</select>
+	
+	<delete id="deleteBoard" parameterClass="string">
+		DELETE FROM MEMBER
+		WHERE MEM_ID = #mem_id#
+	</delete>
+
+</sqlMap>

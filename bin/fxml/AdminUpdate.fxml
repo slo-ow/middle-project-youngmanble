@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="UpPane" prefHeight="618.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminUpadteController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="labTit" contentDisplay="CENTER" text="업데이트를 시작합니다" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="btnMabServ" layoutX="86.0" layoutY="173.0" mnemonicParsing="false" onAction="#MabServ" prefHeight="56.0" prefWidth="240.0" text="부루마블 서버">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnMabClient" layoutX="423.0" layoutY="173.0" mnemonicParsing="false" onAction="#MabClient" text="부루마블 클라이언트">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTetServ" layoutX="86.0" layoutY="309.0" mnemonicParsing="false" onAction="#TetServ" prefHeight="56.0" prefWidth="240.0" text="테트리스 서버">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTetClient" layoutX="423.0" layoutY="309.0" mnemonicParsing="false" onAction="#TetClient" text="테트리스 클라이언트">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

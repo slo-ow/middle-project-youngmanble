@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="registerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controller.RegisterUserController">
+   <children>
+      <ImageView fx:id="joinPage" fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="memPic" fitHeight="150.0" fitWidth="200.0" layoutX="771.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="joIdImg" fitHeight="36.0" fitWidth="90.0" layoutX="288.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입%20아이디.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joPsImg" fitHeight="36.0" fitWidth="132.0" layoutX="282.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입비밀번호.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joPsChImg" fitHeight="49.0" fitWidth="159.0" layoutX="271.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입비번확인.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joNmImg" fitHeight="39.0" fitWidth="90.0" layoutX="286.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입%20이름.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joGenImg" fitHeight="43.0" fitWidth="95.0" layoutX="286.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입%20성별.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joinRrnImg" fitHeight="55.0" fitWidth="168.0" layoutX="272.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입주앞.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="joHpnumImg" fitHeight="36.0" fitWidth="109.0" layoutX="286.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입핸폰.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="anImg" fitHeight="47.0" fitWidth="100.0" layoutX="284.0" layoutY="522.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입인증.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mailImg" fitHeight="50.0" fitWidth="109.0" layoutX="287.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/회원가입메일.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="joinPgLabel" layoutX="441.0" layoutY="37.0" text="회원가입" textFill="#f8f7f7">
+         <font>
+            <Font name="RixToyGray" size="60.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="man" layoutX="471.0" layoutY="373.0" mnemonicParsing="false" selected="true" text="남자" textFill="WHITE">
+         <font>
+            <Font name="1HoonWhitecat Regular" size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="radioGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="girl" layoutX="558.0" layoutY="373.0" mnemonicParsing="false" text="여자" textFill="WHITE" toggleGroup="$radioGroup">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="txtjoinId" layoutX="471.0" layoutY="148.0" onMouseClicked="#changeId" opacity="0.6" />
+      <TextField fx:id="txtjoinName" layoutX="473.0" layoutY="314.0" opacity="0.6" />
+      <TextField fx:id="txtBrt" layoutX="471.0" layoutY="435.0" opacity="0.6" />
+      <TextField fx:id="txtP1" layoutX="471.0" layoutY="480.0" opacity="0.6" prefHeight="23.0" prefWidth="137.0" />
+      <TextField fx:id="txtCheckN" layoutX="471.0" layoutY="530.0" opacity="0.6" />
+      <TextField fx:id="txtMail" layoutX="471.0" layoutY="578.0" opacity="0.6" />
+      <Button fx:id="txtRepetiCheck" layoutX="624.0" layoutY="147.0" mnemonicParsing="false" onAction="#reCheck" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="중복체크" textFill="WHITE" />
+      <Button fx:id="joinCertified" layoutX="625.0" layoutY="480.0" mnemonicParsing="false" onAction="#check" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="인증" textFill="WHITE" />
+      <Button fx:id="joinCheck" layoutX="625.0" layoutY="530.0" mnemonicParsing="false" onAction="#joinCheck" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="확인" textFill="WHITE" />
+      <Button fx:id="submit" layoutX="430.0" layoutY="651.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="100.0" style="-fx-border-color: red; -fx-background-color: #000000;" text="등록" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="addbtn" layoutX="797.0" layoutY="312.0" mnemonicParsing="false" onAction="#addPic" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="프로필사진등록" textFill="WHITE" />
+      <Button fx:id="backbtn" layoutX="569.0" layoutY="651.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="50.0" prefWidth="100.0" style="-fx-border-color: red; -fx-background-color: #000000;" text="취소" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="txtJoinpass" layoutX="472.0" layoutY="198.0" opacity="0.6" />
+      <PasswordField fx:id="joinPscheck" layoutX="474.0" layoutY="252.0" opacity="0.6" />
+   </children>
+</Pane>

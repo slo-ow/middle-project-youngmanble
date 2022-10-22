@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="618.0" prefWidth="800.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.controller.AdminUserCheckController">
+   <children>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="800.0" text="회원관리" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="UserTable" layoutY="50.0" prefHeight="500.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="117.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="104.0" text="회원명" />
+            <TableColumn fx:id="colGender" prefWidth="65.0" text="성별" />
+            <TableColumn fx:id="colRegno" prefWidth="117.0" text="주민번호앞자리" />
+            <TableColumn fx:id="colPhone" prefWidth="137.0" text="전화번호" />
+            <TableColumn fx:id="colEmail" prefWidth="204.0" text="이메일" />
+            <TableColumn fx:id="colCount" prefWidth="55.0" text="경고수" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnDelete" layoutX="612.0" layoutY="565.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: black; -fx-border-color: #ffffff;" text="회원삭제" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfId" layoutX="208.0" layoutY="566.0" minHeight="-Infinity" prefHeight="28.0" prefWidth="385.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="41.0" layoutY="566.0" prefHeight="28.0" prefWidth="148.0" style="-fx-border-color: #ffffff;" text="회원 아이디" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

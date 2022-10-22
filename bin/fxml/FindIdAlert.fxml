@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controller.FindIdAlertController">
+   <children>
+      <ImageView fitHeight="59.0" fitWidth="59.0" layoutX="7.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/check_b.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="closeBtn" layoutX="86.0" layoutY="85.0" mnemonicParsing="false" onAction="#responseOK" prefHeight="22.0" prefWidth="86.0" style="-fx-background-color: black;" text="확인" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="11.0" />
+         </font>
+      </Button>
+      <Label layoutX="80.0" layoutY="51.0" text="인증번호가 발송되었습니다.">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="9.0" text="Youngmanble">
+         <font>
+            <Font name="RixToyGray" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
